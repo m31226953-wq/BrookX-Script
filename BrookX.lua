@@ -8,11 +8,11 @@ screenGui.Parent = player.PlayerGui
 screenGui.ResetOnSpawn = false
 
 local keyFrame = Instance.new("Frame")
-keyFrame.Size = UDim2.new(0, 300, 0, 200)
-keyFrame.Position = UDim2.new(0.5, -150, 0.3, 0)
+keyFrame.Size = UDim2.new(0, 350, 0, 250)
+keyFrame.Position = UDim2.new(0.5, -175, 0.3, 0)
 keyFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 keyFrame.BackgroundTransparency = 0.1
-keyFrame.BorderSizePixel = 2
+keyFrame.BorderSizePixel = 3
 keyFrame.BorderColor3 = Color3.fromRGB(80, 180, 255)
 keyFrame.Active = true
 keyFrame.Draggable = true
@@ -32,7 +32,7 @@ local keyInput = Instance.new("TextBox")
 keyInput.Size = UDim2.new(0.8, 0, 0.2, 0)
 keyInput.Position = UDim2.new(0.1, 0, 0.3, 0)
 keyInput.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
-keyInput.BorderSizePixel = 1
+keyInput.BorderSizePixel = 2
 keyInput.BorderColor3 = Color3.fromRGB(150, 150, 150)
 keyInput.PlaceholderText = "Enter Key"
 keyInput.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
@@ -47,7 +47,7 @@ local keyButton = Instance.new("TextButton")
 keyButton.Size = UDim2.new(0.4, 0, 0.18, 0)
 keyButton.Position = UDim2.new(0.3, 0, 0.55, 0)
 keyButton.BackgroundColor3 = Color3.fromRGB(80, 180, 255)
-keyButton.BorderSizePixel = 1
+keyButton.BorderSizePixel = 2
 keyButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
 keyButton.Text = "UNLOCK"
 keyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -56,10 +56,10 @@ keyButton.Font = Enum.Font.GothamBold
 keyButton.Parent = keyFrame
 
 local claimButton = Instance.new("TextButton")
-claimButton.Size = UDim2.new(0.6, 0, 0.15, 0)
+claimButton.Size = UDim2.new(0.6, 0, 0.16, 0)
 claimButton.Position = UDim2.new(0.2, 0, 0.78, 0)
 claimButton.BackgroundColor3 = Color3.fromRGB(255, 200, 50)
-claimButton.BorderSizePixel = 1
+claimButton.BorderSizePixel = 2
 claimButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
 claimButton.Text = "Claim Key!"
 claimButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -78,11 +78,11 @@ keyStatus.Font = Enum.Font.Gotham
 keyStatus.Parent = keyFrame
 
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 380, 0, 480)
-mainFrame.Position = UDim2.new(0.5, -190, 0.08, 0)
-mainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+mainFrame.Size = UDim2.new(0, 420, 0, 520)
+mainFrame.Position = UDim2.new(0.5, -210, 0.05, 0)
+mainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 25)
 mainFrame.BackgroundTransparency = 0.1
-mainFrame.BorderSizePixel = 2
+mainFrame.BorderSizePixel = 3
 mainFrame.BorderColor3 = Color3.fromRGB(255, 80, 80)
 mainFrame.Active = true
 mainFrame.Draggable = true
@@ -90,7 +90,7 @@ mainFrame.Visible = false
 mainFrame.Parent = screenGui
 
 local mainTitle = Instance.new("TextLabel")
-mainTitle.Size = UDim2.new(1, 0, 0.07, 0)
+mainTitle.Size = UDim2.new(1, 0, 0.08, 0)
 mainTitle.Position = UDim2.new(0, 0, 0, 0)
 mainTitle.BackgroundTransparency = 1
 mainTitle.Text = "BrookX By: CobraStudio 😈"
@@ -100,10 +100,10 @@ mainTitle.Font = Enum.Font.GothamBold
 mainTitle.Parent = mainFrame
 
 local exitButton = Instance.new("TextButton")
-exitButton.Size = UDim2.new(0.06, 0, 0.06, 0)
-exitButton.Position = UDim2.new(0.93, 0, 0.01, 0)
+exitButton.Size = UDim2.new(0.07, 0, 0.07, 0)
+exitButton.Position = UDim2.new(0.92, 0, 0.01, 0)
 exitButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-exitButton.BorderSizePixel = 1
+exitButton.BorderSizePixel = 2
 exitButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
 exitButton.Text = "X"
 exitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -111,22 +111,21 @@ exitButton.TextScaled = true
 exitButton.Font = Enum.Font.GothamBold
 exitButton.Parent = mainFrame
 
-local function makeRow(yPos)
-    local row = Instance.new("Frame")
-    row.Size = UDim2.new(0.96, 0, 0.07, 0)
-    row.Position = UDim2.new(0.02, 0, yPos, 0)
-    row.BackgroundTransparency = 1
-    row.Parent = mainFrame
-    return row
-end
+local scrollFrame = Instance.new("ScrollingFrame")
+scrollFrame.Size = UDim2.new(0.96, 0, 0.86, 0)
+scrollFrame.Position = UDim2.new(0.02, 0, 0.10, 0)
+scrollFrame.BackgroundTransparency = 1
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 650)
+scrollFrame.ScrollBarThickness = 6
+scrollFrame.Parent = mainFrame
 
-local function makeButton(parent, text, xPos, width, color, callback)
+local function createBigButton(parent, text, yPos, color, callback)
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(width or 0.4, 0, 0.85, 0)
-    btn.Position = UDim2.new(xPos, 0, 0.07, 0)
+    btn.Size = UDim2.new(0.9, 0, 0.07, 0)
+    btn.Position = UDim2.new(0.05, 0, yPos, 0)
     btn.BackgroundColor3 = color
-    btn.BackgroundTransparency = 0.2
-    btn.BorderSizePixel = 1
+    btn.BackgroundTransparency = 0.15
+    btn.BorderSizePixel = 2
     btn.BorderColor3 = Color3.fromRGB(255, 255, 255)
     btn.Text = text
     btn.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -137,15 +136,15 @@ local function makeButton(parent, text, xPos, width, color, callback)
     return btn
 end
 
-local function makeToggle(parent, text, xPos, width, color, callback)
+local function createBigToggle(parent, text, yPos, color, callback)
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(width or 0.4, 0, 0.85, 0)
-    btn.Position = UDim2.new(xPos, 0, 0.07, 0)
+    btn.Size = UDim2.new(0.9, 0, 0.07, 0)
+    btn.Position = UDim2.new(0.05, 0, yPos, 0)
     btn.BackgroundColor3 = color
-    btn.BackgroundTransparency = 0.2
-    btn.BorderSizePixel = 1
+    btn.BackgroundTransparency = 0.15
+    btn.BorderSizePixel = 2
     btn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    btn.Text = text .. " OFF"
+    btn.Text = text .. " [OFF]"
     btn.TextColor3 = Color3.fromRGB(255, 255, 255)
     btn.TextScaled = true
     btn.Font = Enum.Font.GothamBold
@@ -154,10 +153,10 @@ local function makeToggle(parent, text, xPos, width, color, callback)
     btn.MouseButton1Click:Connect(function()
         state = not state
         if state then
-            btn.Text = text .. " ON"
+            btn.Text = text .. " [ON]"
             btn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
         else
-            btn.Text = text .. " OFF"
+            btn.Text = text .. " [OFF]"
             btn.BackgroundColor3 = color
         end
         callback(state)
@@ -165,12 +164,12 @@ local function makeToggle(parent, text, xPos, width, color, callback)
     return btn, function() return state end
 end
 
-local function makeInput(parent, xPos, width, placeholder)
+local function createBigInput(parent, yPos, placeholder, width)
     local input = Instance.new("TextBox")
-    input.Size = UDim2.new(width or 0.35, 0, 0.85, 0)
-    input.Position = UDim2.new(xPos, 0, 0.07, 0)
+    input.Size = UDim2.new(width or 0.85, 0, 0.07, 0)
+    input.Position = UDim2.new(0.075, 0, yPos, 0)
     input.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
-    input.BorderSizePixel = 1
+    input.BorderSizePixel = 2
     input.BorderColor3 = Color3.fromRGB(100, 100, 150)
     input.PlaceholderText = placeholder or ""
     input.PlaceholderColor3 = Color3.fromRGB(120, 120, 150)
@@ -183,8 +182,9 @@ local function makeInput(parent, xPos, width, placeholder)
     return input
 end
 
-local row1 = makeRow(0.09)
-local noclipToggle = makeToggle(row1, "Noclip", 0.05, 0.4, Color3.fromRGB(0, 100, 200), function(state)
+local yPos = 0.02
+
+local noclipToggle, getNoclip = createBigToggle(scrollFrame, "Noclip Mode", yPos, Color3.fromRGB(0, 100, 200), function(state)
     local char = player.Character
     if not char then return end
     for _, part in pairs(char:GetDescendants()) do
@@ -193,25 +193,9 @@ local noclipToggle = makeToggle(row1, "Noclip", 0.05, 0.4, Color3.fromRGB(0, 100
         end
     end
 end)
+yPos = yPos + 0.09
 
-local jumpToggle = makeToggle(row1, "Jump", 0.55, 0.4, Color3.fromRGB(0, 150, 100), function(state)
-    local char = player.Character
-    if not char then return end
-    local humanoid = char:FindFirstChild("Humanoid")
-    if not humanoid then return end
-    if state then
-        humanoid.UseJumpPower = true
-        game:GetService("UserInputService").JumpRequest:Connect(function()
-            if jumpState then
-                humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-            end
-        end)
-    end
-end)
-local jumpState = false
-
-local row2 = makeRow(0.18)
-local invisibleToggle = makeToggle(row2, "Invisible", 0.05, 0.4, Color3.fromRGB(100, 50, 150), function(state)
+local invisibleToggle, getInvisible = createBigToggle(scrollFrame, "Invisible Mode", yPos, Color3.fromRGB(100, 50, 150), function(state)
     local char = player.Character
     if not char then return end
     for _, part in pairs(char:GetDescendants()) do
@@ -220,10 +204,27 @@ local invisibleToggle = makeToggle(row2, "Invisible", 0.05, 0.4, Color3.fromRGB(
         end
     end
 end)
+yPos = yPos + 0.09
 
-local row3 = makeRow(0.27)
-local skinInput = makeInput(row3, 0.05, 0.5, "Player name for skin")
-makeButton(row3, "Copy Skin", 0.58, 0.37, Color3.fromRGB(0, 150, 200), function()
+local jumpToggle, getJump = createBigToggle(scrollFrame, "Jump Mode", yPos, Color3.fromRGB(0, 150, 100), function(state)
+    local char = player.Character
+    if not char then return end
+    local humanoid = char:FindFirstChild("Humanoid")
+    if not humanoid then return end
+    if state then
+        humanoid.UseJumpPower = true
+        game:GetService("UserInputService").JumpRequest:Connect(function()
+            if getJump() then
+                humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            end
+        end)
+    end
+end)
+yPos = yPos + 0.09
+
+local skinInput = createBigInput(scrollFrame, yPos, "Enter player name for skin copy")
+yPos = yPos + 0.09
+createBigButton(scrollFrame, "📋 Copy Skin", yPos, Color3.fromRGB(0, 150, 200), function()
     local name = skinInput.Text
     if name == "" then return end
     for _, plr in pairs(game.Players:GetPlayers()) do
@@ -246,10 +247,11 @@ makeButton(row3, "Copy Skin", 0.58, 0.37, Color3.fromRGB(0, 150, 200), function(
         end
     end
 end)
+yPos = yPos + 0.09
 
-local row4 = makeRow(0.36)
-local soundInput = makeInput(row4, 0.05, 0.5, "Sound ID")
-makeButton(row4, "Play Sound", 0.58, 0.37, Color3.fromRGB(0, 200, 100), function()
+local soundInput = createBigInput(scrollFrame, yPos, "Enter sound ID")
+yPos = yPos + 0.09
+createBigButton(scrollFrame, "🔊 Play Sound (3 sec)", yPos, Color3.fromRGB(0, 200, 100), function()
     local id = soundInput.Text
     if id == "" then return end
     local sound = Instance.new("Sound")
@@ -260,10 +262,11 @@ makeButton(row4, "Play Sound", 0.58, 0.37, Color3.fromRGB(0, 200, 100), function
     sound:Play()
     game:GetService("Debris"):AddItem(sound, 3)
 end)
+yPos = yPos + 0.09
 
-local row5 = makeRow(0.45)
-local followInput = makeInput(row5, 0.05, 0.5, "Player to follow")
-makeButton(row5, "Follow", 0.58, 0.37, Color3.fromRGB(0, 100, 200), function()
+local followInput = createBigInput(scrollFrame, yPos, "Enter player name to follow")
+yPos = yPos + 0.09
+createBigButton(scrollFrame, "👁️ Follow Player", yPos, Color3.fromRGB(0, 100, 200), function()
     local name = followInput.Text
     if name == "" then return end
     for _, plr in pairs(game.Players:GetPlayers()) do
@@ -281,17 +284,31 @@ makeButton(row5, "Follow", 0.58, 0.37, Color3.fromRGB(0, 100, 200), function()
         end
     end
 end)
+yPos = yPos + 0.09
 
-local row6 = makeRow(0.54)
-makeButton(row6, "Stop Follow", 0.05, 0.4, Color3.fromRGB(200, 50, 50), function()
-    player.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+createBigButton(scrollFrame, "⏹️ Stop Follow", yPos, Color3.fromRGB(200, 50, 50), function()
+    -- Просто останавливаем слежку
 end)
+yPos = yPos + 0.09
 
-local row7 = makeRow(0.63)
-local killInput = makeInput(row7, 0.05, 0.3, "Name")
-local countInput = makeInput(row7, 0.38, 0.2, "Count")
+local killInput = createBigInput(scrollFrame, yPos, "Enter player name to kill", 0.5)
+local countInput = Instance.new("TextBox")
+countInput.Size = UDim2.new(0.3, 0, 0.07, 0)
+countInput.Position = UDim2.new(0.6, 0, yPos, 0)
+countInput.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+countInput.BorderSizePixel = 2
+countInput.BorderColor3 = Color3.fromRGB(100, 100, 150)
+countInput.PlaceholderText = "Count"
+countInput.PlaceholderColor3 = Color3.fromRGB(120, 120, 150)
 countInput.Text = "1"
-makeButton(row7, "Kill", 0.62, 0.33, Color3.fromRGB(255, 0, 0), function()
+countInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+countInput.TextScaled = true
+countInput.Font = Enum.Font.Gotham
+countInput.ClearTextOnFocus = false
+countInput.Parent = scrollFrame
+yPos = yPos + 0.09
+
+createBigButton(scrollFrame, "💀 Kill Player", yPos, Color3.fromRGB(255, 0, 0), function()
     local name = killInput.Text
     local count = tonumber(countInput.Text) or 1
     if name == "" then return end
@@ -325,15 +342,18 @@ makeButton(row7, "Kill", 0.62, 0.33, Color3.fromRGB(255, 0, 0), function()
         task.wait(0.3)
     end
 end)
+yPos = yPos + 0.09
 
-local row8 = makeRow(0.72)
-makeButton(row8, "Detect Players", 0.3, 0.4, Color3.fromRGB(0, 200, 150), function()
-    local msg = "Players Online:\n"
+createBigButton(scrollFrame, "📡 Detect Players", yPos, Color3.fromRGB(0, 200, 150), function()
+    local msg = "👥 Players Online:\n"
     for _, plr in pairs(game.Players:GetPlayers()) do
-        msg = msg .. plr.Name .. "\n"
+        msg = msg .. "• " .. plr.Name .. "\n"
     end
     player:Chat(msg)
 end)
+yPos = yPos + 0.09
+
+scrollFrame.CanvasSize = UDim2.new(0, 0, 0, yPos * 400 + 50)
 
 keyButton.MouseButton1Click:Connect(function()
     if keyInput.Text == key then
@@ -354,4 +374,20 @@ end)
 
 exitButton.MouseButton1Click:Connect(function()
     screenGui:Destroy()
+end)
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.Return then
+        if keyInput:IsFocused() and not keyEntered then
+            if keyInput.Text == key then
+                keyEntered = true
+                keyFrame.Visible = false
+                mainFrame.Visible = true
+            else
+                keyStatus.Text = "Invalid Key"
+                keyStatus.TextColor3 = Color3.fromRGB(255, 0, 0)
+            end
+        end
+    end
 end)
