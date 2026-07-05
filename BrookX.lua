@@ -19,8 +19,8 @@ local function createShadow(instance, size, transparency)
 end
 
 local keyFrame = Instance.new("Frame")
-keyFrame.Size = UDim2.new(0, 380, 0, 280)
-keyFrame.Position = UDim2.new(0.5, -190, 0.3, 0)
+keyFrame.Size = UDim2.new(0, 320, 0, 240)
+keyFrame.Position = UDim2.new(0.5, -160, 0.3, 0)
 keyFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 25)
 keyFrame.BackgroundTransparency = 0.05
 keyFrame.BorderSizePixel = 2
@@ -44,7 +44,7 @@ glow.BorderSizePixel = 0
 glow.Parent = keyFrame
 
 local keyTitle = Instance.new("TextLabel")
-keyTitle.Size = UDim2.new(1, 0, 0.25, 0)
+keyTitle.Size = UDim2.new(1, 0, 0.22, 0)
 keyTitle.Position = UDim2.new(0, 0, 0.03, 0)
 keyTitle.BackgroundTransparency = 1
 keyTitle.Text = "BrookX By: CobraStudio 😈"
@@ -54,10 +54,10 @@ keyTitle.Font = Enum.Font.GothamBold
 keyTitle.Parent = keyFrame
 
 local keySub = Instance.new("TextLabel")
-keySub.Size = UDim2.new(1, 0, 0.12, 0)
-keySub.Position = UDim2.new(0, 0, 0.22, 0)
+keySub.Size = UDim2.new(1, 0, 0.1, 0)
+keySub.Position = UDim2.new(0, 0, 0.2, 0)
 keySub.BackgroundTransparency = 1
-keySub.Text = "Enter Key to Unlock"
+keySub.Text = "Enter Key"
 keySub.TextColor3 = Color3.fromRGB(150, 180, 200)
 keySub.TextScaled = true
 keySub.Font = Enum.Font.Gotham
@@ -65,7 +65,7 @@ keySub.Parent = keyFrame
 
 local keyInput = Instance.new("TextBox")
 keyInput.Size = UDim2.new(0.85, 0, 0.15, 0)
-keyInput.Position = UDim2.new(0.075, 0, 0.37, 0)
+keyInput.Position = UDim2.new(0.075, 0, 0.33, 0)
 keyInput.BackgroundColor3 = Color3.fromRGB(30, 35, 50)
 keyInput.BackgroundTransparency = 0.3
 keyInput.BorderSizePixel = 1
@@ -83,8 +83,8 @@ keyCorner.CornerRadius = UDim.new(0, 6)
 keyCorner.Parent = keyInput
 
 local keyButton = Instance.new("TextButton")
-keyButton.Size = UDim2.new(0.4, 0, 0.15, 0)
-keyButton.Position = UDim2.new(0.3, 0, 0.56, 0)
+keyButton.Size = UDim2.new(0.4, 0, 0.14, 0)
+keyButton.Position = UDim2.new(0.3, 0, 0.52, 0)
 keyButton.BackgroundColor3 = Color3.fromRGB(80, 180, 255)
 keyButton.BackgroundTransparency = 0.1
 keyButton.BorderSizePixel = 2
@@ -100,7 +100,7 @@ btnCorner.Parent = keyButton
 
 local claimButton = Instance.new("TextButton")
 claimButton.Size = UDim2.new(0.6, 0, 0.14, 0)
-claimButton.Position = UDim2.new(0.2, 0, 0.75, 0)
+claimButton.Position = UDim2.new(0.2, 0, 0.7, 0)
 claimButton.BackgroundColor3 = Color3.fromRGB(255, 200, 50)
 claimButton.BackgroundTransparency = 0.1
 claimButton.BorderSizePixel = 2
@@ -116,7 +116,7 @@ claimCorner.Parent = claimButton
 
 local keyStatus = Instance.new("TextLabel")
 keyStatus.Size = UDim2.new(1, 0, 0.1, 0)
-keyStatus.Position = UDim2.new(0, 0, 0.9, 0)
+keyStatus.Position = UDim2.new(0, 0, 0.88, 0)
 keyStatus.BackgroundTransparency = 1
 keyStatus.Text = ""
 keyStatus.TextColor3 = Color3.fromRGB(150, 150, 150)
@@ -125,8 +125,8 @@ keyStatus.Font = Enum.Font.Gotham
 keyStatus.Parent = keyFrame
 
 local mainFrame = Instance.new("Frame")
-mainFrame.Size = UDim2.new(0, 420, 0, 520)
-mainFrame.Position = UDim2.new(0.5, -210, 0.08, 0)
+mainFrame.Size = UDim2.new(0, 340, 0, 440)
+mainFrame.Position = UDim2.new(0.5, -170, 0.08, 0)
 mainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 25)
 mainFrame.BackgroundTransparency = 0.05
 mainFrame.BorderSizePixel = 2
@@ -142,7 +142,7 @@ mainCorner.CornerRadius = UDim.new(0, 12)
 mainCorner.Parent = mainFrame
 
 local header = Instance.new("Frame")
-header.Size = UDim2.new(1, 0, 0.09, 0)
+header.Size = UDim2.new(1, 0, 0.08, 0)
 header.Position = UDim2.new(0, 0, 0, 0)
 header.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
 header.BackgroundTransparency = 0.2
@@ -175,44 +175,18 @@ local exitCorner = Instance.new("UICorner")
 exitCorner.CornerRadius = UDim.new(0, 4)
 exitCorner.Parent = exitButton
 
-local scrollFrame = Instance.new("ScrollingFrame")
-scrollFrame.Size = UDim2.new(0.96, 0, 0.85, 0)
-scrollFrame.Position = UDim2.new(0.02, 0, 0.11, 0)
-scrollFrame.BackgroundTransparency = 1
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, 900)
-scrollFrame.ScrollBarThickness = 4
-scrollFrame.ScrollBarImageColor3 = Color3.fromRGB(80, 180, 255)
-scrollFrame.Parent = mainFrame
-
-local function createCategory(parent, text, yPos)
-    local cat = Instance.new("TextLabel")
-    cat.Size = UDim2.new(0.95, 0, 0.04, 0)
-    cat.Position = UDim2.new(0.025, 0, yPos, 0)
-    cat.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    cat.BackgroundTransparency = 0.9
-    cat.BorderSizePixel = 0
-    cat.Text = " ⚡ " .. text
-    cat.TextColor3 = Color3.fromRGB(80, 180, 255)
-    cat.TextScaled = true
-    cat.Font = Enum.Font.GothamBold
-    cat.TextXAlignment = Enum.TextXAlignment.Left
-    cat.Parent = parent
-    return cat
-end
-
-local function createButton(parent, text, yPos, color, icon, callback)
+local function createButton(parent, text, yPos, color, callback)
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(0.92, 0, 0.055, 0)
-    btn.Position = UDim2.new(0.04, 0, yPos, 0)
+    btn.Size = UDim2.new(0.42, 0, 0.055, 0)
+    btn.Position = UDim2.new(yPos, 0, 0, 0)
     btn.BackgroundColor3 = color
     btn.BackgroundTransparency = 0.15
     btn.BorderSizePixel = 1
     btn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    btn.Text = icon .. " " .. text
+    btn.Text = text
     btn.TextColor3 = Color3.fromRGB(255, 255, 255)
     btn.TextScaled = true
     btn.Font = Enum.Font.GothamBold
-    btn.TextXAlignment = Enum.TextXAlignment.Left
     btn.Parent = parent
     local btnCorner = Instance.new("UICorner")
     btnCorner.CornerRadius = UDim.new(0, 4)
@@ -221,19 +195,18 @@ local function createButton(parent, text, yPos, color, icon, callback)
     return btn
 end
 
-local function createToggle(parent, text, yPos, color, icon, callback)
+local function createToggle(parent, text, yPos, color, callback)
     local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(0.92, 0, 0.055, 0)
-    btn.Position = UDim2.new(0.04, 0, yPos, 0)
+    btn.Size = UDim2.new(0.42, 0, 0.055, 0)
+    btn.Position = UDim2.new(yPos, 0, 0, 0)
     btn.BackgroundColor3 = color
     btn.BackgroundTransparency = 0.15
     btn.BorderSizePixel = 1
     btn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    btn.Text = icon .. " " .. text .. " [OFF]"
+    btn.Text = text .. " [OFF]"
     btn.TextColor3 = Color3.fromRGB(255, 255, 255)
     btn.TextScaled = true
     btn.Font = Enum.Font.GothamBold
-    btn.TextXAlignment = Enum.TextXAlignment.Left
     btn.Parent = parent
     local btnCorner = Instance.new("UICorner")
     btnCorner.CornerRadius = UDim.new(0, 4)
@@ -242,11 +215,11 @@ local function createToggle(parent, text, yPos, color, icon, callback)
     btn.MouseButton1Click:Connect(function()
         state = not state
         if state then
-            btn.Text = icon .. " " .. text .. " [ON]"
+            btn.Text = text .. " [ON]"
             btn.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
             btn.BackgroundTransparency = 0.15
         else
-            btn.Text = icon .. " " .. text .. " [OFF]"
+            btn.Text = text .. " [OFF]"
             btn.BackgroundColor3 = color
             btn.BackgroundTransparency = 0.15
         end
@@ -255,37 +228,10 @@ local function createToggle(parent, text, yPos, color, icon, callback)
     return btn, function() return state end
 end
 
-local function createDropdown(parent, text, yPos, options, callback)
-    local btn = Instance.new("TextButton")
-    btn.Size = UDim2.new(0.92, 0, 0.055, 0)
-    btn.Position = UDim2.new(0.04, 0, yPos, 0)
-    btn.BackgroundColor3 = Color3.fromRGB(30, 30, 60)
-    btn.BackgroundTransparency = 0.15
-    btn.BorderSizePixel = 1
-    btn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    btn.Text = " 👤 " .. text .. ": " .. options[1]
-    btn.TextColor3 = Color3.fromRGB(255, 255, 255)
-    btn.TextScaled = true
-    btn.Font = Enum.Font.GothamBold
-    btn.TextXAlignment = Enum.TextXAlignment.Left
-    btn.Parent = parent
-    local btnCorner = Instance.new("UICorner")
-    btnCorner.CornerRadius = UDim.new(0, 4)
-    btnCorner.Parent = btn
-    local index = 1
-    btn.MouseButton1Click:Connect(function()
-        index = index + 1
-        if index > #options then index = 1 end
-        btn.Text = " 👤 " .. text .. ": " .. options[index]
-        callback(options[index])
-    end)
-    return btn, function() return options[index] end
-end
-
-local function createInput(parent, text, yPos, placeholder)
+local function createInput(parent, text, yPos, placeholder, width)
     local input = Instance.new("TextBox")
-    input.Size = UDim2.new(0.92, 0, 0.05, 0)
-    input.Position = UDim2.new(0.04, 0, yPos, 0)
+    input.Size = UDim2.new(width or 0.42, 0, 0.055, 0)
+    input.Position = UDim2.new(yPos, 0, 0, 0)
     input.BackgroundColor3 = Color3.fromRGB(25, 30, 45)
     input.BackgroundTransparency = 0.3
     input.BorderSizePixel = 1
@@ -304,12 +250,26 @@ local function createInput(parent, text, yPos, placeholder)
     return input
 end
 
-local yPos = 0.02
+local function createLabel(parent, text, yPos, color)
+    local lbl = Instance.new("TextLabel")
+    lbl.Size = UDim2.new(0.12, 0, 0.055, 0)
+    lbl.Position = UDim2.new(yPos, 0, 0, 0)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = text
+    lbl.TextColor3 = color or Color3.fromRGB(200, 200, 200)
+    lbl.TextScaled = true
+    lbl.Font = Enum.Font.GothamBold
+    lbl.Parent = parent
+    return lbl
+end
 
-createCategory(scrollFrame, "MOVEMENT", yPos)
-yPos = yPos + 0.06
+local row1 = Instance.new("Frame")
+row1.Size = UDim2.new(0.96, 0, 0.065, 0)
+row1.Position = UDim2.new(0.02, 0, 0.10, 0)
+row1.BackgroundTransparency = 1
+row1.Parent = mainFrame
 
-local noclipToggle, getNoclip = createToggle(scrollFrame, "Noclip Mode+", yPos, Color3.fromRGB(0, 100, 200), "🚀", function(state)
+local noclipToggle, getNoclip = createToggle(row1, "Noclip", 0.04, Color3.fromRGB(0, 100, 200), function(state)
     local char = player.Character
     if not char then return end
     for _, part in pairs(char:GetDescendants()) do
@@ -318,9 +278,24 @@ local noclipToggle, getNoclip = createToggle(scrollFrame, "Noclip Mode+", yPos, 
         end
     end
 end)
-yPos = yPos + 0.06
 
-local jumpToggle, getJump = createToggle(scrollFrame, "Jump Mode", yPos, Color3.fromRGB(0, 150, 100), "🦘", function(state)
+local invisibleToggle, getInvisible = createToggle(row1, "Invisible", 0.54, Color3.fromRGB(100, 50, 150), function(state)
+    local char = player.Character
+    if not char then return end
+    for _, part in pairs(char:GetDescendants()) do
+        if part:IsA("BasePart") then
+            part.Transparency = state and 1 or 0
+        end
+    end
+end)
+
+local row2 = Instance.new("Frame")
+row2.Size = UDim2.new(0.96, 0, 0.065, 0)
+row2.Position = UDim2.new(0.02, 0, 0.18, 0)
+row2.BackgroundTransparency = 1
+row2.Parent = mainFrame
+
+local jumpToggle, getJump = createToggle(row2, "Jump", 0.04, Color3.fromRGB(0, 150, 100), function(state)
     local char = player.Character
     if not char then return end
     local humanoid = char:FindFirstChild("Humanoid")
@@ -334,88 +309,48 @@ local jumpToggle, getJump = createToggle(scrollFrame, "Jump Mode", yPos, Color3.
         end)
     end
 end)
-yPos = yPos + 0.06
 
-createCategory(scrollFrame, "VISUALS", yPos)
-yPos = yPos + 0.06
+local row3 = Instance.new("Frame")
+row3.Size = UDim2.new(0.96, 0, 0.065, 0)
+row3.Position = UDim2.new(0.02, 0, 0.26, 0)
+row3.BackgroundTransparency = 1
+row3.Parent = mainFrame
 
-local invisibleToggle, getInvisible = createToggle(scrollFrame, "Invisible Mode+", yPos, Color3.fromRGB(100, 50, 150), "👻", function(state)
-    local char = player.Character
-    if not char then return end
-    for _, part in pairs(char:GetDescendants()) do
-        if part:IsA("BasePart") then
-            part.Transparency = state and 1 or 0
-        end
-    end
-end)
-yPos = yPos + 0.06
-
-local rainbowToggle, getRainbow = createToggle(scrollFrame, "Rainbow Tag", yPos, Color3.fromRGB(200, 0, 150), "🌈", function(state)
-    local char = player.Character
-    if not char then return end
-    local head = char:FindFirstChild("Head")
-    if not head then return end
-    if state then
-        spawn(function()
-            while getRainbow() do
-                local hue = tick() % 1
-                local color = Color3.fromHSV(hue, 1, 1)
-                head.BrickColor = BrickColor.new(color)
-                local tag = player:FindFirstChild("NameDisplay")
-                if tag then
-                    tag.BackgroundColor3 = color
-                end
-                task.wait(0.05)
-            end
-        end)
-    else
-        head.BrickColor = BrickColor.new("White")
-        local tag = player:FindFirstChild("NameDisplay")
-        if tag then
-            tag.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        end
-    end
-end)
-yPos = yPos + 0.06
-
-createCategory(scrollFrame, "SKIN & SOUND", yPos)
-yPos = yPos + 0.06
-
-local playerDropdown, getPlayer = createDropdown(scrollFrame, "Select Player", yPos, {"None"}, function(val)
+local skinLabel = createLabel(row3, "Skin:", 0.02, Color3.fromRGB(200, 200, 200))
+local skinInput = createInput(row3, "Player Name", 0.14, "Player name", 0.40)
+local skinBtn = createButton(row3, "Copy", 0.58, Color3.fromRGB(0, 150, 200), function()
+    local name = skinInput.Text
+    if name == "" then return end
     for _, plr in pairs(game.Players:GetPlayers()) do
-        if plr.Name == val then
-            selectedPlayer = plr
-            return
-        end
-    end
-    selectedPlayer = nil
-end)
-local selectedPlayer = nil
-yPos = yPos + 0.06
-
-createButton(scrollFrame, "Copy Skin", yPos, Color3.fromRGB(0, 150, 200), "📋", function()
-    if not selectedPlayer then return end
-    local targetChar = selectedPlayer.Character
-    if not targetChar then return end
-    local char = player.Character
-    if not char then return end
-    for _, part in pairs(char:GetDescendants()) do
-        if part:IsA("BasePart") and targetChar:FindFirstChild(part.Name) then
-            local targetPart = targetChar[part.Name]
-            if targetPart:IsA("BasePart") then
-                part.BrickColor = targetPart.BrickColor
-                part.Material = targetPart.Material
-                part.Transparency = targetPart.Transparency
+        if plr.Name:lower():find(name:lower()) then
+            local targetChar = plr.Character
+            if not targetChar then return end
+            local char = player.Character
+            if not char then return end
+            for _, part in pairs(char:GetDescendants()) do
+                if part:IsA("BasePart") and targetChar:FindFirstChild(part.Name) then
+                    local targetPart = targetChar[part.Name]
+                    if targetPart:IsA("BasePart") then
+                        part.BrickColor = targetPart.BrickColor
+                        part.Material = targetPart.Material
+                        part.Transparency = targetPart.Transparency
+                    end
+                end
             end
+            break
         end
     end
 end)
-yPos = yPos + 0.06
 
-local soundInput = createInput(scrollFrame, "Sound ID", yPos, "Enter Sound ID")
-yPos = yPos + 0.06
+local row4 = Instance.new("Frame")
+row4.Size = UDim2.new(0.96, 0, 0.065, 0)
+row4.Position = UDim2.new(0.02, 0, 0.34, 0)
+row4.BackgroundTransparency = 1
+row4.Parent = mainFrame
 
-createButton(scrollFrame, "Play Sound (3 sec)", yPos, Color3.fromRGB(0, 200, 100), "🔊", function()
+local soundLabel = createLabel(row4, "Sound:", 0.02, Color3.fromRGB(200, 200, 200))
+local soundInput = createInput(row4, "Sound ID", 0.14, "Enter ID", 0.40)
+local soundBtn = createButton(row4, "Play", 0.58, Color3.fromRGB(0, 200, 100), function()
     local id = soundInput.Text
     if id == "" then return end
     local sound = Instance.new("Sound")
@@ -426,18 +361,18 @@ createButton(scrollFrame, "Play Sound (3 sec)", yPos, Color3.fromRGB(0, 200, 100
     sound:Play()
     game:GetService("Debris"):AddItem(sound, 3)
 end)
-yPos = yPos + 0.06
 
-createCategory(scrollFrame, "PLAYER CONTROL", yPos)
-yPos = yPos + 0.06
+local row5 = Instance.new("Frame")
+row5.Size = UDim2.new(0.96, 0, 0.065, 0)
+row5.Position = UDim2.new(0.02, 0, 0.42, 0)
+row5.BackgroundTransparency = 1
+row5.Parent = mainFrame
 
-local followInput = createInput(scrollFrame, "Player Name", yPos, "Player to follow")
-yPos = yPos + 0.06
-
+local followLabel = createLabel(row5, "Follow:", 0.02, Color3.fromRGB(200, 200, 200))
+local followInput = createInput(row5, "Player Name", 0.14, "Player name", 0.40)
 local followActive = false
 local followTarget = nil
-
-createButton(scrollFrame, "View Player", yPos, Color3.fromRGB(0, 100, 200), "👁️", function()
+local followBtn = createButton(row5, "View", 0.58, Color3.fromRGB(0, 100, 200), function()
     if followActive then
         followActive = false
         followTarget = nil
@@ -461,74 +396,69 @@ createButton(scrollFrame, "View Player", yPos, Color3.fromRGB(0, 100, 200), "�
         end
     end
 end)
-yPos = yPos + 0.06
 
-createButton(scrollFrame, "Stop View", yPos, Color3.fromRGB(200, 50, 50), "⏹️", function()
-    followActive = false
-    followTarget = nil
-end)
-yPos = yPos + 0.06
+local row6 = Instance.new("Frame")
+row6.Size = UDim2.new(0.96, 0, 0.065, 0)
+row6.Position = UDim2.new(0.02, 0, 0.50, 0)
+row6.BackgroundTransparency = 1
+row6.Parent = mainFrame
 
-local killInput = createInput(scrollFrame, "Player Name", yPos, "Player to kill")
-yPos = yPos + 0.06
-
-local countInput = createInput(scrollFrame, "Kill Count", yPos, "Kill count (default: 1)")
-countInput.Text = "1"
-yPos = yPos + 0.06
-
-local function killPlayer(target)
-    if not target then return end
-    local char = target.Character
-    if not char then return end
-    local hrp = char:FindFirstChild("HumanoidRootPart")
-    if not hrp then return end
-    local cart = Instance.new("Part")
-    cart.Size = Vector3.new(5, 2, 3)
-    cart.BrickColor = BrickColor.new("Bright red")
-    cart.Material = Enum.Material.Plastic
-    cart.Parent = game.Workspace
-    cart.Position = hrp.Position + Vector3.new(0, 1, 0)
-    local weld = Instance.new("Weld")
-    weld.Part0 = cart
-    weld.Part1 = hrp
-    weld.C0 = CFrame.new(0, 1, 0)
-    weld.Parent = cart
-    local bp = Instance.new("BodyPosition")
-    bp.MaxForce = Vector3.new(4000, 4000, 4000)
-    bp.Position = Vector3.new(0, -500, 0)
-    bp.Parent = cart
-    task.wait(2)
-    cart:Destroy()
-end
-
-createButton(scrollFrame, "Kill Player", yPos, Color3.fromRGB(255, 0, 0), "💀", function()
+local killLabel = createLabel(row6, "Kill:", 0.02, Color3.fromRGB(200, 200, 200))
+local killInput = createInput(row6, "Player Name", 0.14, "Player name", 0.30)
+local countInput = createInput(row6, "Count", 0.48, "1", 0.20)
+local killBtn = createButton(row6, "Kill", 0.72, Color3.fromRGB(255, 0, 0), function()
     local name = killInput.Text
     local count = tonumber(countInput.Text) or 1
+    if name == "" then return end
     for i = 1, count do
         for _, plr in pairs(game.Players:GetPlayers()) do
             if plr.Name:lower():find(name:lower()) then
-                killPlayer(plr)
-                task.wait(0.5)
+                local char = plr.Character
+                if not char then return end
+                local hrp = char:FindFirstChild("HumanoidRootPart")
+                if not hrp then return end
+                local cart = Instance.new("Part")
+                cart.Size = Vector3.new(5, 2, 3)
+                cart.BrickColor = BrickColor.new("Bright red")
+                cart.Material = Enum.Material.Plastic
+                cart.Parent = game.Workspace
+                cart.Position = hrp.Position + Vector3.new(0, 1, 0)
+                local weld = Instance.new("Weld")
+                weld.Part0 = cart
+                weld.Part1 = hrp
+                weld.C0 = CFrame.new(0, 1, 0)
+                weld.Parent = cart
+                local bp = Instance.new("BodyPosition")
+                bp.MaxForce = Vector3.new(4000, 4000, 4000)
+                bp.Position = Vector3.new(0, -500, 0)
+                bp.Parent = cart
+                task.wait(2)
+                cart:Destroy()
                 break
             end
         end
+        task.wait(0.3)
     end
 end)
-yPos = yPos + 0.06
 
-createCategory(scrollFrame, "TOOLS", yPos)
-yPos = yPos + 0.06
+local row7 = Instance.new("Frame")
+row7.Size = UDim2.new(0.96, 0, 0.065, 0)
+row7.Position = UDim2.new(0.02, 0, 0.58, 0)
+row7.BackgroundTransparency = 1
+row7.Parent = mainFrame
 
-createButton(scrollFrame, "Detect Players", yPos, Color3.fromRGB(0, 200, 150), "📡", function()
+local stopBtn = createButton(row7, "Stop View", 0.04, Color3.fromRGB(200, 50, 50), function()
+    followActive = false
+    followTarget = nil
+end)
+
+local detectBtn = createButton(row7, "Detect Players", 0.50, Color3.fromRGB(0, 200, 150), function()
     local msg = "👥 Players Online:\n"
     for _, plr in pairs(game.Players:GetPlayers()) do
         msg = msg .. "• " .. plr.Name .. "\n"
     end
     player:Chat(msg)
 end)
-yPos = yPos + 0.06
-
-scrollFrame.CanvasSize = UDim2.new(0, 0, 0, yPos * 400 + 50)
 
 keyButton.MouseButton1Click:Connect(function()
     if keyInput.Text == key then
