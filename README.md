@@ -18,4 +18,4 @@
 Вставьте в эксплоит:
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/m31226953-wq/BrookX/main/BrookX.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/m31226953-wq/BrookX-Script/main/BrookX.lua"))()
